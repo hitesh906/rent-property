@@ -36,11 +36,11 @@ export default function PropertyShowcase({ property }: PropertyShowcaseProps) {
         </div>
 
         {/* Price */}
-        <div className="absolute top-4 right-4">
+        {/* <div className="absolute top-4 right-4">
           <span className="px-3 py-1 glass-effect text-white text-sm font-semibold rounded-full">
             ${property.price.toLocaleString()}/day
           </span>
-        </div>
+        </div> */}
 
         {/* Featured Badge */}
         {property.featured && (
@@ -56,10 +56,10 @@ export default function PropertyShowcase({ property }: PropertyShowcaseProps) {
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 line-clamp-1">{property.title}</h3>
         
-        <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
+        {/* <div className="flex items-center text-gray-600 dark:text-gray-400 mb-3">
           <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
           <span className="text-sm">{property.location}</span>
-        </div>
+        </div> */}
 
         <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2 mb-4 leading-relaxed">
           {property.description}
@@ -95,7 +95,7 @@ export default function PropertyShowcase({ property }: PropertyShowcaseProps) {
         </div>
 
         {/* Actions */}
-        <div className="flex space-x-2">
+        {/* <div className="flex space-x-2">
           <AnimatedButton className="flex-1" size="sm">
             View Details
           </AnimatedButton>
@@ -103,7 +103,7 @@ export default function PropertyShowcase({ property }: PropertyShowcaseProps) {
             <Calendar className="w-4 h-4 mr-2" />
             Book Now
           </AnimatedButton>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
