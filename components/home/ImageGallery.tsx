@@ -62,7 +62,7 @@ export default function ImageGallery() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src={image.src}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${image.src}`}
                 alt={image.title}
                 className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
                   index === 0 || index === 3 ? 'h-[400px] md:h-[500px]' : 'h-[200px]'
