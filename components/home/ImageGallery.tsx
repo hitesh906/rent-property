@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import { properties } from '@/lib/data';
 import { fadeInUp, staggerContainer, scaleUp } from '@/lib/animations';
+import Image from 'next/image';
 
 export default function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -61,12 +62,14 @@ export default function ImageGallery() {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <img
+              <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${image.src}`}
                 alt={image.title}
                 className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
                   index === 0 || index === 3 ? 'h-[400px] md:h-[500px]' : 'h-[200px]'
                 }`}
+                 width={500}
+  height={300}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
@@ -108,10 +111,12 @@ export default function ImageGallery() {
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
+                <Image
                   src={selectedImage}
                   alt="Selected property"
                   className="w-full h-full object-contain rounded-lg"
+                   width={500}
+  height={300}
                 />
                 <button
                   onClick={() => setSelectedImage(null)}
