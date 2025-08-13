@@ -51,7 +51,7 @@ export default function Header() {
               <Crown className="w-8 h-8 text-yellow-500" />
             </motion.div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold gold-text">Vivasan</h1>
+              <h1 className="text-2xl font-bold gold-text">Vivasvan</h1>
               <p className="text-xs text-gray-600 dark:text-gray-400 -mt-1">Elite Rentals</p>
             </div>
           </Link>
