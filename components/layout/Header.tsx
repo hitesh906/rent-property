@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Crown } from 'lucide-react';
+import { Menu, X, Crown, Book } from 'lucide-react';
 import ThemeToggle from '@/components/common/ThemeToggle';
+import AnimatedButton from '@/components/common/AnimatedButton';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -83,6 +84,21 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             
+            {/* Book Now Button */}
+            <a
+              href="https://wa.me/919876543210?text=Hello%2C%20would%20like%20to%20book%20the%20property."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:block"
+            >
+              <AnimatedButton size="sm">
+                <div className='flex items-center'>
+                  <Book className="w-4 h-4 mr-2" />
+                  Book Now
+                </div>
+              </AnimatedButton>
+            </a>
+            
             {/* Mobile Menu Button */}
             <motion.button
               className="md:hidden p-2 rounded-lg glass-effect"
@@ -126,6 +142,28 @@ export default function Header() {
                     </Link>
                   </motion.div>
                 ))}
+                
+                {/* Mobile Book Now Button */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1 }}
+                  className="pt-4"
+                >
+                  <a
+                    href="https://wa.me/919876543210?text=Hello%2C%20would%20like%20to%20book%20the%20property."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <AnimatedButton size="lg" className="w-full">
+                      <div className='flex items-center justify-center'>
+                        <Book className="w-5 h-5 mr-2" />
+                        Book Now
+                      </div>
+                    </AnimatedButton>
+                  </a>
+                </motion.div>
               </div>
             </motion.div>
           )}
